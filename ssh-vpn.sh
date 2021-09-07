@@ -20,13 +20,13 @@ commonname=red-flat.my.id
 email=admin@red-flat.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/rockneters/chivas/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
 # Edu OVPN
-wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cdn-ovpn.py
+wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/rockneters/chivas/main/cdn-ovpn.py
 chmod +x /usr/local/bin/edu-ovpn
 
 # Installing Service
@@ -117,14 +117,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/rockneters/chivas/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/rockneters/chivas/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/rockneters/chivas/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -154,7 +154,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/rockneters/chivas/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -223,7 +223,7 @@ sudo make install
 
 END
 #OpenVPN
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -256,7 +256,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/banner.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/rockneters/chivas/main/banner.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -285,56 +285,56 @@ apt -y install dos2unix
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/about.sh"
-wget -O usernew "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/xp.sh"
-wget -O swap "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/swapkvm.sh"
-wget -O menu "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/menu.sh"
-wget -O l2tp "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/l2tp.sh"
-wget -O ssh "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/ssh.sh"
-wget -O ssssr "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/ssssr.sh"
-wget -O sstpp "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/sstpp.sh"
-wget -O trojaan "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/trojaan.sh"
-wget -O v2raay "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/v2raay.sh"
-wget -O wgr "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/wgr.sh"
-wget -O vleess "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/vleess.sh"
-wget -O bbr "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/update/bbr.sh"
-wget -O bannerku "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/bannerku"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/user-limit.sh && chmod +x /usr/bin/user-limit
-wget -O cfd "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cfd.sh"
-wget -O cff "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cff.sh"
-wget -O cfh "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cfh.sh"
-wget -O autoreboot "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/autoreboot.sh"
-wget -O add-trgo "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/add-trgo"
-wget -O del-trgo "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/del-trgo"
-wget -O cek-trgo "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cek-trgo"
-wget -O renew-trgo "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/renew-trgo"
-wget -O trojangoo "https://raw.githubusercontent.com/bokir-tampan/ranjau-darate/main/trojangoo.sh"
+wget -O add-host "https://raw.githubusercontent.com/rockneters/chivas/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/rockneters/chivas/main/about.sh"
+wget -O usernew "https://raw.githubusercontent.com/rockneters/chivas/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/rockneters/chivas/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/rockneters/chivas/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/rockneters/chivas/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/rockneters/chivas/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/rockneters/chivas/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/rockneters/chivas/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/rockneters/chivas/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/rockneters/chivas/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/rockneters/chivas/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/rockneters/chivas/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/rockneters/chivas/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/rockneters/chivas/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/rockneters/chivas/main/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/rockneters/chivas/main/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/rockneters/chivas/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/rockneters/chivas/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/rockneters/chivas/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/rockneters/chivas/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/rockneters/chivas/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/rockneters/chivas/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/rockneters/chivas/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/rockneters/chivas/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/rockneters/chivas/main/port-vless.sh"
+wget -O wbmn "https://raw.githubusercontent.com/rockneters/chivas/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/rockneters/chivas/main/xp.sh"
+wget -O swap "https://raw.githubusercontent.com/rockneters/chivas/main/swapkvm.sh"
+wget -O menu "https://raw.githubusercontent.com/rockneters/chivas/main/update/menu.sh"
+wget -O l2tp "https://raw.githubusercontent.com/rockneters/chivas/main/update/l2tp.sh"
+wget -O ssh "https://raw.githubusercontent.com/rockneters/chivas/main/update/ssh.sh"
+wget -O ssssr "https://raw.githubusercontent.com/rockneters/chivas/main/update/ssssr.sh"
+wget -O sstpp "https://raw.githubusercontent.com/rockneters/chivas/main/update/sstpp.sh"
+wget -O trojaan "https://raw.githubusercontent.com/rockneters/chivas/main/update/trojaan.sh"
+wget -O v2raay "https://raw.githubusercontent.com/rockneters/chivas/main/update/v2raay.sh"
+wget -O wgr "https://raw.githubusercontent.com/rockneters/chivas/main/update/wgr.sh"
+wget -O vleess "https://raw.githubusercontent.com/rockneters/chivas/main/update/vleess.sh"
+wget -O bbr "https://raw.githubusercontent.com/rockneters/chivas/main/update/bbr.sh"
+wget -O bannerku "https://raw.githubusercontent.com/rockneters/chivas/main/bannerku"
+wget -O /usr/bin/user-limit https://raw.githubusercontent.com/rockneters/chivas/main/user-limit.sh && chmod +x /usr/bin/user-limit
+wget -O cfd "https://raw.githubusercontent.com/rockneters/chivas/main/cfd.sh"
+wget -O cff "https://raw.githubusercontent.com/rockneters/chivas/main/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/rockneters/chivas/main/cfh.sh"
+wget -O autoreboot "https://raw.githubusercontent.com/rockneters/chivas/main/autoreboot.sh"
+wget -O add-trgo "https://raw.githubusercontent.com/rockneters/chivas/main/add-trgo"
+wget -O del-trgo "https://raw.githubusercontent.com/rockneters/chivas/main/del-trgo"
+wget -O cek-trgo "https://raw.githubusercontent.com/rockneters/chivas/main/cek-trgo"
+wget -O renew-trgo "https://raw.githubusercontent.com/rockneters/chivas/main/renew-trgo"
+wget -O trojangoo "https://raw.githubusercontent.com/rockneters/chivase/main/trojangoo.sh"
 chmod +x add-host
 chmod +x usernew
 chmod +x trial

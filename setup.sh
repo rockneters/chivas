@@ -11,7 +11,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
-IZIN=$( curl http://lnd.red-flat.my.id:81/shahwjusisjsnajakajannaiajanajam | grep $MYIP )
+IZIN=$( curl http://s5.rocknetvpn.my.id:81/jahannam | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
@@ -27,23 +27,23 @@ exit 0
 fi
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/cf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darate/main/weleh.sh && chmod +x weleh.sh && screen -S weleh ./weleh.sh
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ohp.sh && chmod +x ohp.sh && screen -S ohp ./ohp.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
+wget https://raw.githubusercontent.com/rockneters/chivase/main/weleh.sh && chmod +x weleh.sh && screen -S weleh ./weleh.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/ohp.sh && chmod +x ohp.sh && screen -S ohp ./ohp.sh
 #install ssr
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
 #install v2ray
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 #install L2TP
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
-wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
-#wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/ins-trojango.sh && chmod +x ins-trojango.sh && screen -S Trojan-go ./ins-trojango.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
+wget https://raw.githubusercontent.com/rockneters/chivas/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+#wget https://raw.githubusercontent.com/rockneters/chivas/main/ins-trojango.sh && chmod +x ins-trojango.sh && screen -S Trojan-go ./ins-trojango.sh
 
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
@@ -71,7 +71,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/rockneters/chivas/main/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver

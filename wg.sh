@@ -88,10 +88,10 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O add-wg "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/add-wg.sh"
-wget -O del-wg "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/del-wg.sh"
-wget -O cek-wg "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cek-wg.sh"
-wget -O renew-wg "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/renew-wg.sh"
+wget -O add-wg "https://raw.githubusercontent.com/rockneters/chivas/main/add-wg.sh"
+wget -O del-wg "https://raw.githubusercontent.com/rockneters/chivas/main/del-wg.sh"
+wget -O cek-wg "https://raw.githubusercontent.com/rockneters/chivas/main/cek-wg.sh"
+wget -O renew-wg "https://raw.githubusercontent.com/rockneters/chivas/main/renew-wg.sh"
 chmod +x add-wg
 chmod +x del-wg
 chmod +x cek-wg
