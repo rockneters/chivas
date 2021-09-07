@@ -3,7 +3,7 @@
 # ==============================
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/edu-ovpn.py
+wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/rockneters/chivas/main/edu-ovpn.py
 chmod +x /usr/local/bin/edu-ovpn
 
 # Installing Service

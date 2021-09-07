@@ -3,7 +3,7 @@
 # ==============================
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/edu-ssl https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cdn-ssl.py
+wget -q -O /usr/local/bin/edu-ssl https://raw.githubusercontent.com/rockneters/chivas/main/cdn-ssl.py
 chmod +x /usr/local/bin/edu-ssl
 
 # Installing Service
